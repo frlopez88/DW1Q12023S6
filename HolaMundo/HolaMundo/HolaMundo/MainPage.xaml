@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#e0564c" Padding="24" CornerRadius="0">
+            <Label Text="¡Bienvenidos a mi primer Aplicación Movíl!" HorizontalTextAlignment="Center" TextColor="White" FontSize="15"/>
+        </Frame>
+
+        <Image Source="https://upload.wikimedia.org/wikipedia/commons/8/8d/CEUTEC_HONDURAS.png"
+               Aspect="AspectFit"
+               HorizontalOptions="Center" />
+
+        <Label Text="Hola mi nombre es Fernando López, soy docente del Técnico de Desarrollo Web. Mi Aplicación desea saludarte." FontSize="20" ></Label>
+
+        <Entry x:Name="nmInput" Keyboard="Text"
+               Placeholder="Escriba su Nombre"
+               VerticalOptions="CenterAndExpand" />
+        
+        <Button Text="Dar Clic"
+            Font="Large"
+            BorderWidth="1"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+            Clicked="saludar"    
+            />
+
+
+        <Label x:Name="resultado" FontSize="20" ></Label>
+        
+    </StackLayout>
+
+</ContentPage>
