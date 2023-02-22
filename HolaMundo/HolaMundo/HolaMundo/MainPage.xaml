@@ -1,34 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HolaMundo.ViewModel"
              x:Class="HolaMundo.MainPage">
 
+    <ContentPage.BindingContext>
+        <local:ViewModelPersona></local:ViewModelPersona>
+    </ContentPage.BindingContext>
+    
     <StackLayout>
         <Frame BackgroundColor="#e0564c" Padding="24" CornerRadius="0">
-            <Label Text="¡Bienvenidos a mi primer Aplicación Movíl!" HorizontalTextAlignment="Center" TextColor="White" FontSize="15"/>
+            <Label Text="¡Bienvenidos a mi primer Aplicación Movíl MVVM Persona!" HorizontalTextAlignment="Center" TextColor="White" FontSize="15"/>
         </Frame>
 
         <Image Source="https://upload.wikimedia.org/wikipedia/commons/8/8d/CEUTEC_HONDURAS.png"
                Aspect="AspectFit"
                HorizontalOptions="Center" />
 
-        <Label Text="Hola mi nombre es Fernando López, soy docente del Técnico de Desarrollo Web. Mi Aplicación desea saludarte." FontSize="20" ></Label>
+        <Label Text="Nombre:"></Label>
+        <Entry Text="{Binding Nombre}"  Keyboard="Text"></Entry>
 
-        <Entry x:Name="nmInput" Keyboard="Text"
-               Placeholder="Escriba su Nombre"
-               VerticalOptions="CenterAndExpand" />
-        
-        <Button Text="Dar Clic"
-            Font="Large"
-            BorderWidth="1"
-            HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand"
-            Clicked="saludar"    
-            />
+        <Label Text="Fecha de Nacimiento"></Label>
+        <DatePicker Date="{Binding FechaNacimiento}"  ></DatePicker>
+
+        <Label Text="Identidad"></Label>
+        <Entry Text="{Binding Identidad}"  Keyboard="Numeric"></Entry>
+
+        <Label Text="Estatura mts."></Label>
+        <Entry Text="{Binding Estatura}" Keyboard="Numeric" ></Entry>
 
 
-        <Label x:Name="resultado" FontSize="20" ></Label>
-        
+        <Button Command="{Binding crearPersona}" Text="Crear Persona"/>
+
+        <Label Text="{Binding Mensaje}" ></Label>
+
     </StackLayout>
 
 </ContentPage>

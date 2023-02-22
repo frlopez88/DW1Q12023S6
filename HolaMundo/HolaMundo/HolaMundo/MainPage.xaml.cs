@@ -15,12 +15,5 @@ namespace HolaMundo
             InitializeComponent();
         }
 
-        private void saludar(object sender, EventArgs e)
-        {
-
-            string nm= nmInput.Text;
-            resultado.Text = $"Bienvenido {nm}, saludos!";
-
-        }
     }
 }
